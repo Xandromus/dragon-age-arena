@@ -88,12 +88,12 @@ main {
 .instructions {
     width: 75%;
     margin: 0 auto;
-/*    position: absolute; */
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
 }
-/*
+
 .instructions:before, .instructions:after {
    content: '';
    position: absolute;
@@ -112,7 +112,37 @@ main {
    border-left-width: 1.5em;
    border-right-color: transparent;
    }
-*/
+
+.left-ribbon, .right-ribbon {
+    position: relative;
+}
+
+.left-ribbon:after {
+   content: '';
+   position: absolute;
+   display: block;
+   bottom: -.3em;
+   border: 1.5em solid rgba(255,0,0,.8);
+   z-index: -1;
+   right: -2em;
+   border-left-width: 1.5em;
+   border-right-color: transparent;
+   }
+
+   .right-ribbon:before {
+   content: '';
+   position: absolute;
+   display: block;
+   bottom: -.3em;
+   border: 1.5em solid rgba(255,0,0,.8);
+   z-index: -1;
+   left: -2em;
+   border-right-width: 1.5em;
+   border-left-color: transparent;
+   }
+
+
+
 
 /* PLAYER STAGES AND  MODULES */
 
