@@ -25,7 +25,8 @@ html {
 body {
     height: 100%;
     position: relative;
-    background-color: black;
+    background: url(../images/arena.jpg) no-repeat center center fixed;
+    background-size: cover;
     color: white;
     font-size: 16px;
     font-weight: lighter;
@@ -40,11 +41,15 @@ h1 {
     text-align: center;
     margin: 0 auto 20px auto;
     padding-top: 20px;
+    text-shadow: 3px 3px black;
 }
 
 h2 {
     font-size: 1.2em;
     text-align: center;
+    background-color: red;
+    padding-top: 20px;
+    padding-bottom: 20px; 
 }
 
 h3 {
@@ -60,6 +65,12 @@ h3 {
     position: relative;
 }
 
+/* HEADER */
+
+header {
+    width: 100%;
+}    
+
 main {
     margin-bottom: auto;
     position: relative;
@@ -74,6 +85,35 @@ main {
     margin: 0 auto;
 }
 
+.instructions {
+    width: 75%;
+    margin: 0 auto;
+/*    position: absolute; */
+    top: 0;
+    left: 0;
+    right: 0;
+}
+/*
+.instructions:before, .instructions:after {
+   content: '';
+   position: absolute;
+   display: block;
+   bottom: -.3em;
+   border: 1.5em solid rgba(255,0,0,.8);
+   z-index: -1;
+   }
+.instructions:before {
+   left: -2em;
+   border-right-width: 1.5em;
+   border-left-color: transparent;
+   }
+.instructions:after {
+   right: -2em;
+   border-left-width: 1.5em;
+   border-right-color: transparent;
+   }
+*/
+
 /* PLAYER STAGES AND  MODULES */
 
 .player-stable {
@@ -85,15 +125,14 @@ main {
     align-items: center;
     margin: 0 auto;
     height: 100%;
-    min-height: 200px;
+    min-height: 150px;
 }
 
 .fighter-stage, .defender-stage {
     width: 100%;
-    max-width: 250px;
     height: 100%;
     min-height: 200px;
-    margin: 10px;
+    margin: 10px auto;
 }
 
 .stage {
@@ -103,7 +142,7 @@ main {
     align-items: center;
     margin: 0 auto;
     height: 100%;
-    min-height: 200px;
+    min-height: 150px;
 }
 
 .column {
@@ -111,8 +150,7 @@ main {
     flex-direction: column;
     text-align: center;
     width: 100%;
-    max-width: 250px;
-    margin: 10px;
+    margin: 10px auto;
 }
 
 .attack {
@@ -133,8 +171,14 @@ main {
     background-color: white;
     font-family: 'ringbearermedium';
     font-size: 1.1em;
-    border: 2px solid red;
+    border: 1px solid red;
     border-radius: 10px;
+}
+
+.attack-button:hover {
+    background-color: red;
+    border: 1px solid white;
+    color: white;
 }
 
 .player-module {
@@ -152,10 +196,21 @@ main {
 
 .player-text {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 30px;
+    left: 20px;
     padding: 0;
     z-index: 900;
+}
+
+.player-health {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px 1px 5px 5px;
+    border-radius: 5px;
+    z-index: 900;
+    background-color: red;
+    border: 1px solid white;
 }
 
 .player-module img.character {
@@ -164,6 +219,17 @@ main {
     max-width: 250px;
     margin: 0 auto 0 auto;
     z-index: 1;
+    border-radius: 25px;
+    border: 5px solid white;
+}
+
+.player-module img.character:hover {
+    border: 5px solid red;
+}
+
+.vs {
+    font-size: 4vw;
+    text-shadow: 3px 3px black;
 }
 
 
@@ -189,6 +255,11 @@ footer p {
     right: 0;
     text-align: center;
     font-size: 1.2em;
+    background-color: red;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 75%;
+    margin: 0 auto;
 }
 
 .arial {
