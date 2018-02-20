@@ -19,7 +19,7 @@
          'alistair': {
              name: 'Alistair',
              health: 120,
-             attack: 10,
+             attack: 11,
              image: "assets/images/alistair.png",
              defenderCounterAttack: 12
          },
