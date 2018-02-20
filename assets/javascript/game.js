@@ -46,7 +46,7 @@
          counter = 1;
          kills = 0;
 
-         $(".fighter-stage, .defender-stage, .player-stable, .attack-reset").empty();
+         $(".fighter-stage, .defender-stage, .player-stable, .attack-reset, .damage-display").empty();
 
          Object.keys(characters).forEach(key => {
 
@@ -75,11 +75,12 @@
                  $(".defender-stage").append(defender);
                  var attack = $("<button class='attack-button'>").text("Attack!");
                  $(".instructions").text("Enter Battle!");
+                 $(".damage-display").empty();
                  defenderSelected = true;
                  opponentsReady = true;
 
                  $(".attack-reset").append(attack);
-                 $(".vs").text("VS.");
+                 $(".vs").text("vs.");
 
              } else {
                  yourFighter = $(this);
@@ -100,13 +101,16 @@
          var fighterAttack = characters[yourFighter.attr("data-key")].attack;
          var defenderName = defender.attr("data-key");
          var defenderAttack = characters[defender.attr("data-key")].defenderCounterAttack;
+         var fighterMessage = ("You attacked " + characters[defender.attr("data-key")].name + " for " + (fighterAttack * counter) + " points damage.");
+         var defenderMessage = (characters[defender.attr("data-key")].name + " attacked you for " + defenderAttack + " points damage.");
 
          characters[defender.attr("data-key")].health -= (fighterAttack * counter);
+         $(".damage-display").append("<p>").text(fighterMessage);
 
          if (characters[defender.attr("data-key")].health < 1) {
             defenderSelected = false;
             $(".defender-stage, .attack-reset").empty();
-            $(".vs").text("VICTORY");
+            $(".vs").text("victory");
             $(".instructions").text("Choose Your Next Opponent:");
             kills++;
             
@@ -114,6 +118,7 @@
              characters[yourFighter.attr("data-key")].health -= defenderAttack;
              $("#" + fighterName).text(characters[yourFighter.attr("data-key")].health);
              $("#" + defenderName).text(characters[defender.attr("data-key")].health);
+             $(".damage-display").append("<p>").html("" + fighterMessage + "<br /><br />" + defenderMessage + "");
             
          }
          counter++;
@@ -121,15 +126,16 @@
          if (characters[yourFighter.attr("data-key")].health < 1) {
             $("#" + fighterName).text(0);
             $(".instructions").text("Defeated! Press Reset to try again!");
-            $(".vs").text("DEFEAT");
-            $(".attack-reset").empty();
+            $(".vs").text("defeat");
+            $(".attack-reset, .damage-display").empty();
             var reset = $("<button class='reset-button'>").text("Reset");
             $(".attack-reset").append(reset);
          }
 
          if (kills === 3) {
+            $(".damage-display").empty();
             $(".instructions").text("Champion! Press Reset to play again!");
-            $(".vs").text("CHAMPION");
+            $(".vs").text("champion");
             var reset = $("<button class='reset-button'>").text("Reset");
             $(".attack-reset").append(reset);
          }
