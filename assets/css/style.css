@@ -90,7 +90,7 @@ main {
 }
 
 h2.instructions {
-    font-size: 2vw;
+    font-size: 3vw;
     letter-spacing: 5pt;
     width: 75%;
     margin: 0 auto;
@@ -98,36 +98,7 @@ h2.instructions {
     top: 0;
     left: 0;
     right: 0;
-}
-
-h2.instructions:before,
-h2.instructions:after,
-footer p:before,
-footer p:after,
-.damage-display:before,
-.damage-display:after {
-    content: '';
-    position: absolute;
-    display: block;
-    bottom: -.3em;
-    border: 1.5em solid rgba(197, 17, 28, .8);
-    z-index: -1;
-}
-
-h2.instructions:before,
-footer p:before,
-.damage-display:before {
-    left: -2em;
-    border-right-width: 1.5em;
-    border-left-color: transparent;
-}
-
-h2.instructions:after,
-footer p:after,
-.damage-display:after {
-    right: -2em;
-    border-left-width: 1.5em;
-    border-right-color: transparent;
+    border-radius: 50px;
 }
 
 .left-ribbon,
@@ -135,33 +106,17 @@ footer p:after,
     position: relative;
 }
 
-.left-ribbon:after {
-    content: '';
-    position: absolute;
-    display: block;
-    bottom: -.3em;
-    border: 1.5em solid rgba(197, 17, 28, .8);
-    z-index: -1;
-    right: -2em;
-    border-left-width: 1.5em;
-    border-right-color: transparent;
+.left-ribbon {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-right: 20px;
 }
 
-.right-ribbon:before {
-    content: '';
-    position: absolute;
-    display: block;
-    bottom: -.3em;
-    border: 1.5em solid rgba(197, 17, 28, .8);
-    z-index: -1;
-    left: -2em;
-    border-right-width: 1.5em;
-    border-left-color: transparent;
+.right-ribbon {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-left: 20px;
 }
-
-
-
-
 
 /* PLAYER STAGES AND  MODULES */
 
@@ -226,14 +181,14 @@ footer p:after,
     background-color: white;
     font-family: 'ringbearermedium';
     font-size: 1.1em;
-    border: 1px solid #C5111C;
+    border: 2px solid #C5111C;
     border-radius: 10px;
 }
 
 .attack-button:hover,
 .reset-button:hover {
     background-color: #C5111C;
-    border: 1px solid white;
+    border: 2px solid white;
     color: white;
 }
 
@@ -251,6 +206,7 @@ footer p:after,
     min-height: 60px;
     background-color: #C5111C;
     font-size: .9em;
+    border-radius: 50px;
 }
 
 .player-module {
@@ -300,7 +256,15 @@ footer p:after,
     border: 5px solid #C5111C;
 }
 
-.vs {
+.outcome {
+    background-color: #C5111C;
+    border-radius: 50px;
+    width: 50%;
+    height: 100%;
+    min-height: 60px;
+}
+
+.outcome-display {
     font-size: 4vw;
     text-shadow: 3px 3px black;
 }
@@ -334,6 +298,7 @@ footer p {
     padding-bottom: 20px;
     width: 75%;
     margin: 0 auto;
+    border-radius: 50px;
 }
 
 .arial {
@@ -377,12 +342,9 @@ footer p {
         width: 700px;
         margin: 0 auto;
     }
-    .damage-display {
+    .outcome, .damage-display {
         width: 100%;
-    }
-    .damage-display:before,
-    .damage-display:after {
-        display: none;
+        border-radius: 0;
     }
 }
 
@@ -400,6 +362,7 @@ footer p {
     }
     h2.instructions {
         width: 100%;
+        border-radius: 0;
     }
     .player-module {
         width: 40vw;
@@ -416,16 +379,19 @@ footer p {
     footer p {
         width: 100%;
         bottom: 0;
-        font-size: .5em;
+        font-size: .7em;
         letter-spacing: 2pt;
+        border-radius: 0;
     }
-    footer p:before,
-    footer p:after,
-    h2.instructions:before,
-    h2.instructions:after,
-    .left-ribbon:after,
-    .right-ribbon:before {
-        display: none;
+    .left-ribbon {
+        border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0;
+    }
+    .right-ribbon {
+        border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0;
     }
 }
 
@@ -434,7 +400,7 @@ footer p {
 
 @media screen and (max-width: 510px) {
     h2 {
-        font-size: .5em;
+        font-size: .7em;
     }
     h3,
     .player-health {
@@ -449,13 +415,9 @@ footer p {
     .player-module img.character:hover {
         border: 3px solid #C5111C;
     }
-    .player-text {
-        bottom: 20px;
-        left: 15px;
-}
-    .player-health {
-        top: 15px;
-        left: 15px;
+.fighter-stage,
+.defender-stage {
+    min-height: 150px;
 }
 }
 
@@ -464,21 +426,40 @@ footer p {
 
 @media screen and (max-width: 385px) {
     h2 {
-        font-size: .4em;
+        font-size: .6em;
     }
-    h3,
+    h2.instructions {
+        letter-spacing: 2pt;
+    }
+    .player-stable {
+        min-height: 80px;
+    }
+    .player-text {
+        bottom: 12px;
+        left: 12px;
+        font-size: .6em;
+        letter-spacing: 2pt;
+}
     .player-health {
-        font-size: .4em;
+        top: 12px;
+        left: 12px;
+        font-size: .6em;
+        letter-spacing: 2pt;
+        padding: 5px 5px 5px 6px;
+        border-radius: 0;
     }
     .damage-display {
-        font-size: .5em;
+        font-size: .55em;
         letter-spacing: 1pt;
         width: 100%;
     }
-    footer p {
-        font-size: .5em;
-        letter-spacing: 2pt;
+    .player-module img.character {
+        border-radius: 0;
     }
+    .fighter-stage,
+.defender-stage {
+    min-height: 110px;
+}
 }
 
 
@@ -486,18 +467,18 @@ footer p {
 
 @media screen and (max-width: 350px) {
     h2 {
-        font-size: .3em;
+        font-size: .5em;
         letter-spacing: 2pt;
     }
-    h2.instructions {
-        letter-spacing: 4pt;
+    .player-text {
+        font-size: .5em;
     }
-    h3,
     .player-health {
-        font-size: .3em;
+        font-size: .5em;
     }
     .damage-display {
         letter-spacing: 1pt;
+        font-size: .5em;
     }
 }
 

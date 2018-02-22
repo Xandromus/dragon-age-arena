@@ -74,19 +74,19 @@
 
                  $(".defender-stage").append(defender);
                  var attack = $("<button class='attack-button'>").text("Attack!");
-                 $(".instructions").text("Enter Battle!");
+                 $(".instructions").text("Enter battle!");
                  $(".damage-display").empty();
                  defenderSelected = true;
                  opponentsReady = true;
 
                  $(".attack-reset").append(attack);
-                 $(".vs").text("vs.");
+                 $(".outcome-display").text("vs.");
 
              } else {
                  yourFighter = $(this);
 
                  $(".fighter-stage").append(yourFighter);
-                 $(".instructions").text("Choose Your Opponent:");
+                 $(".instructions").text("Choose your opponent:");
                  fighterSelected = true;
              }
 
@@ -110,8 +110,8 @@
          if (characters[defender.attr("data-key")].health < 1) {
             defenderSelected = false;
             $(".defender-stage, .attack-reset").empty();
-            $(".vs").text("victory");
-            $(".instructions").text("Choose Your Next Opponent:");
+            $(".outcome-display").text("victory");
+            $(".instructions").text("Choose your next opponent:");
             kills++;
             
 } else {
@@ -125,8 +125,8 @@
 
          if (characters[yourFighter.attr("data-key")].health < 1) {
             $("#" + fighterName).text(0);
-            $(".instructions").text("Defeated! Press Reset to try again!");
-            $(".vs").text("defeat");
+            $(".instructions").text("Defeated! Press reset to try again!");
+            $(".outcome-display").text("defeat");
             $(".attack-reset, .damage-display").empty();
             var reset = $("<button class='reset-button'>").text("Reset");
             $(".attack-reset").append(reset);
@@ -134,8 +134,8 @@
 
          if (kills === 3) {
             $(".damage-display").empty();
-            $(".instructions").text("Champion! Press Reset to play again!");
-            $(".vs").text("champion");
+            $(".instructions").text("Champion! Press reset to play again!");
+            $(".outcome-display").text("champion");
             var reset = $("<button class='reset-button'>").text("Reset");
             $(".attack-reset").append(reset);
          }
