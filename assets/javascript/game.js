@@ -83,17 +83,9 @@
                  opponentsReady = true;
 
                  var self = this;
-                setTimeout(function() {
-                theOffset = $(self).offset();
-                    if($(window).width() <= 350) {
-                        $("body,html").animate({ scrollTop: theOffset.top - 75 });
-                            }
-                    else if($(window).width() <= 510) {
-                        $("body,html").animate({ scrollTop: theOffset.top - 105 });
-                            }
-                    else {
-                        $("body,html").animate({ scrollTop: theOffset.top - 60 });
-                            }
+                 setTimeout(function() {
+                    theOffset = $(self).offset();
+                    $("body,html").animate({ scrollTop: theOffset.top - 60 }, 400);        
             }, 400);
 
                  $(".attack-reset").append(attack);
