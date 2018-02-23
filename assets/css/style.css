@@ -40,8 +40,9 @@ body {
 h1 {
     font-size: 5vw;
     text-align: center;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 0 auto;
     padding-top: 20px;
+    padding-bottom: 20px;
     text-shadow: 3px 3px black;
 }
 
@@ -72,6 +73,7 @@ h3 {
 
 header {
     width: 100%;
+    background-color: transparent;
 }
 
 main {
@@ -98,24 +100,32 @@ h2.instructions {
     top: 0;
     left: 0;
     right: 0;
+    border-top: 5px solid #220901;
+    border-right: 5px solid #220901;
+    border-bottom: 5px solid #220901;
+    border-left: 5px solid #220901;
     border-radius: 50px;
 }
 
 .left-ribbon,
 .right-ribbon {
     position: relative;
+    border-top: 5px solid #220901;
+    border-bottom: 5px solid #220901;
 }
 
 .left-ribbon {
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     margin-right: 20px;
+    border-right: 5px solid #220901;
 }
 
 .right-ribbon {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     margin-left: 20px;
+    border-left: 5px solid #220901;
 }
 
 /* PLAYER STAGES AND  MODULES */
@@ -206,7 +216,10 @@ h2.instructions {
     min-height: 60px;
     background-color: #220901;
     font-size: .9em;
-    border: solid 2px #C5111C;
+    border-top: solid 5px #C5111C;
+    border-right: solid 5px #C5111C;
+    border-bottom: solid 5px #C5111C;
+    border-left: solid 5px #C5111C;
     border-radius: 50px;
 }
 
@@ -263,11 +276,14 @@ h2.instructions {
     width: 50%;
     height: 100%;
     min-height: 60px;
+    border-top: 5px solid #220901;
+    border-right: 5px solid #220901;
+    border-bottom: 5px solid #220901;
+    border-left: 5px solid #220901;
 }
 
 .outcome-display {
     font-size: 4vw;
-    text-shadow: 3px 3px black;
 }
 
 
@@ -299,6 +315,10 @@ footer p {
     padding-bottom: 20px;
     width: 75%;
     margin: 0 auto;
+    border-top: 5px solid #220901;
+    border-right: 5px solid #220901;
+    border-bottom: 5px solid #220901;
+    border-left: 5px solid #220901;
     border-radius: 50px;
 }
 
@@ -332,6 +352,9 @@ footer p {
 /* Reduced screen */
 
 @media screen and (max-width: 1250px) {
+    h2.instructions {
+        font-size: 1em;
+    }
     h3,
     .player-health {
         font-size: .8em;
@@ -346,6 +369,8 @@ footer p {
     .outcome, .damage-display {
         width: 100%;
         border-radius: 0;
+        border-right: none;
+        border-left: none;
     }
 }
 
@@ -362,8 +387,12 @@ footer p {
         font-size: .7em;
     }
     h2.instructions {
+        font-size: .9em;
         width: 100%;
         border-radius: 0;
+        letter-spacing: 4pt;
+        border-left: none;
+        border-right: none;
     }
     .player-module {
         width: 40vw;
@@ -382,17 +411,22 @@ footer p {
         bottom: 0;
         font-size: .7em;
         letter-spacing: 2pt;
+        border-left: none;
+        border-bottom: none;
+        border-right: none;
         border-radius: 0;
     }
     .left-ribbon {
         border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    margin-right: 0;
+        border-bottom-right-radius: 0;
+        border-right: none;
+        margin-right: 0;
     }
     .right-ribbon {
         border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    margin-left: 0;
+        border-bottom-left-radius: 0;
+        border-left: none;
+        margin-left: 0;
     }
 }
 
@@ -400,8 +434,16 @@ footer p {
 /* Small Tablets */
 
 @media screen and (max-width: 510px) {
+    header {
+        background-color: #220901;
+    }
     h2 {
         font-size: .7em;
+    }
+    h2.instructions {
+        font-size: .8em;
+        letter-spacing: 3pt;
+        border-top: none;
     }
     h3,
     .player-health {
@@ -416,10 +458,10 @@ footer p {
     .player-module img.character:hover {
         border: 3px solid #C5111C;
     }
-.fighter-stage,
-.defender-stage {
-    min-height: 150px;
-}
+    .fighter-stage,
+    .defender-stage {
+        min-height: 150px;
+    }
 }
 
 
@@ -430,6 +472,7 @@ footer p {
         font-size: .6em;
     }
     h2.instructions {
+        font-size: .6em;
         letter-spacing: 2pt;
     }
     .player-stable {
@@ -452,7 +495,6 @@ footer p {
     .damage-display {
         font-size: .55em;
         letter-spacing: 1pt;
-        width: 100%;
     }
     .player-module img.character {
         border-radius: 0;
@@ -467,6 +509,10 @@ footer p {
 /* Smallest screens */
 
 @media screen and (max-width: 350px) {
+    h2.instructions {
+        font-size: .5em;
+        letter-spacing: 2pt;
+    }
     h2 {
         font-size: .5em;
         letter-spacing: 2pt;

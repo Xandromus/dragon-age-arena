@@ -130,7 +130,7 @@
             $(".outcome-display").text("victory");
             $(".instructions").text("Choose your next opponent:");
             kills++;
-            $("body,html").animate({ scrollTop: 0 }, 3000);
+            $("body,html").animate({ scrollTop: 0 }, 2500);
             
 } else {
              characters[yourFighter.attr("data-key")].health -= defenderAttack;
@@ -148,7 +148,7 @@
             $(".attack-reset, .damage-display").empty();
             var reset = $("<button class='reset-button'>").text("Reset");
             $(".attack-reset").append(reset);
-            $("body,html").animate({ scrollTop: 0 }, 3000);
+            $("body,html").animate({ scrollTop: 0 }, 2500);
          }
 
          if (kills === 3) {
