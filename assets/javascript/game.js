@@ -40,6 +40,9 @@
      };
 
      function initGame() {
+
+    $("body,html").animate({ scrollTop: 0 });
+
          fighterSelected = false;
          defenderSelected = false;
          opponentsReady = false;
@@ -80,18 +83,18 @@
                  opponentsReady = true;
 
                  var self = this;
-            setTimeout(function() {
+                setTimeout(function() {
                 theOffset = $(self).offset();
                     if($(window).width() <= 350) {
-                        $('body,html').animate({ scrollTop: theOffset.top - 75 });
+                        $("body,html").animate({ scrollTop: theOffset.top - 75 });
                             }
                     else if($(window).width() <= 510) {
-                        $('body,html').animate({ scrollTop: theOffset.top - 105 });
+                        $("body,html").animate({ scrollTop: theOffset.top - 105 });
                             }
                     else {
-                        $('body,html').animate({ scrollTop: theOffset.top - 60 });
+                        $("body,html").animate({ scrollTop: theOffset.top - 60 });
                             }
-            }, 410);
+            }, 400);
 
                  $(".attack-reset").append(attack);
                  $(".outcome-display").text("vs.");
@@ -127,6 +130,7 @@
             $(".outcome-display").text("victory");
             $(".instructions").text("Choose your next opponent:");
             kills++;
+            $("body,html").animate({ scrollTop: 0 }, 3000);
             
 } else {
              characters[yourFighter.attr("data-key")].health -= defenderAttack;
@@ -144,6 +148,7 @@
             $(".attack-reset, .damage-display").empty();
             var reset = $("<button class='reset-button'>").text("Reset");
             $(".attack-reset").append(reset);
+            $("body,html").animate({ scrollTop: 0 }, 3000);
          }
 
          if (kills === 3) {
@@ -157,7 +162,7 @@
      });
 
      $(document).on("click", ".reset-button", function() {
-            location.reload();        
+            location.reload(true);        
      });
 
 
