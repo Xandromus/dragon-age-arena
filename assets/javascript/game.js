@@ -82,11 +82,7 @@
                  defenderSelected = true;
                  opponentsReady = true;
 
-                 var self = this;
-                 setTimeout(function() {
-                    theOffset = $(self).offset();
-                    $("body,html").animate({ scrollTop: theOffset.top - 60 }, 400);        
-            }, 400);
+                 $("body,html").animate({ scrollTop: 200 }, 400);
 
                  $(".attack-reset").append(attack);
                  $(".outcome-display").text("vs.");
