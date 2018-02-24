@@ -1,3 +1,5 @@
+ (function() {
+
  $(document).ready(function() {
 
      // global variable declarations
@@ -9,7 +11,7 @@
      var kills;
      var reset;
 
-     // object containing characters and their attributes
+     // object containing characters and their key value pairs
      var characters = {
          'morrigan': {
              name: 'Morrigan',
@@ -201,3 +203,5 @@
      // call function to initialize the game
      initGame();
  });
+
+})();
