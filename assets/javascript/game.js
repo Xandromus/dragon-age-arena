@@ -4,7 +4,6 @@
      var defender;
      var fighterSelected;
      var defenderSelected;
-     var opponentsReady;
      var counter;
      var kills;
 
@@ -14,11 +13,11 @@
              health: 120,
              attack: 8,
              image: "assets/images/morrigan.png",
-             defenderCounterAttack: 20
+             defenderCounterAttack: 23
          },
          'alistair': {
              name: 'Alistair',
-             health: 120,
+             health: 125,
              attack: 11,
              image: "assets/images/alistair.png",
              defenderCounterAttack: 12
@@ -32,20 +31,19 @@
          },
          'cassandra': {
              name: 'Cassandra',
-             health: 180,
-             attack: 9,
+             health: 165,
+             attack: 7,
              image: "assets/images/cassandra.png",
-             defenderCounterAttack: 20
+             defenderCounterAttack: 22
          }
      };
 
      function initGame() {
 
-    $("body,html").animate({ scrollTop: 0 });
+         $("body,html").animate({ scrollTop: 0 });
 
          fighterSelected = false;
          defenderSelected = false;
-         opponentsReady = false;
          counter = 1;
          kills = 0;
 
@@ -67,9 +65,8 @@
 
      $(document).on("click", ".player-stable .player-module", function() {
 
-         if (defenderSelected) {
+         if (defenderSelected === false) {
 
-         } else {
 
              if (fighterSelected) {
 
@@ -80,7 +77,6 @@
                  $(".instructions").text("Enter battle!");
                  $(".damage-display").empty();
                  defenderSelected = true;
-                 opponentsReady = true;
 
                  $("body,html").animate({ scrollTop: 200 }, 400);
 
@@ -113,44 +109,44 @@
          $(".damage-display").append("<p>").text(fighterMessage);
 
          if (characters[defender.attr("data-key")].health < 1) {
-            defenderSelected = false;
-            $(".defender-stage, .attack-reset").empty();
-            $(".outcome-display").text("victory");
-            $(".instructions").text("Choose your next opponent:");
-            kills++;
-            $("body,html").animate({ scrollTop: 0 }, 2500);
-            
-} else {
+             defenderSelected = false;
+             $(".defender-stage, .attack-reset").empty();
+             $(".outcome-display").text("victory");
+             $(".instructions").text("Choose your next opponent:");
+             kills++;
+             $("body,html").animate({ scrollTop: 0 }, 2500);
+
+         } else {
              characters[yourFighter.attr("data-key")].health -= defenderAttack;
              $("#" + fighterName).text(characters[yourFighter.attr("data-key")].health);
              $("#" + defenderName).text(characters[defender.attr("data-key")].health);
              $(".damage-display").append("<p>").html("" + fighterMessage + "<br /><br />" + defenderMessage + "");
-            
+
          }
          counter++;
 
          if (characters[yourFighter.attr("data-key")].health < 1) {
-            $("#" + fighterName).text(0);
-            $(".instructions").text("Defeated! Press reset to try again!");
-            $(".outcome-display").text("defeat");
-            $(".attack-reset, .damage-display").empty();
-            var reset = $("<button class='reset-button'>").text("Reset");
-            $(".attack-reset").append(reset);
-            $("body,html").animate({ scrollTop: 0 }, 2500);
+             $("#" + fighterName).text(0);
+             $(".instructions").text("Defeated! Press reset to try again!");
+             $(".outcome-display").text("defeat");
+             $(".attack-reset, .damage-display").empty();
+             var reset = $("<button class='reset-button'>").text("Reset");
+             $(".attack-reset").append(reset);
+             $("body,html").animate({ scrollTop: 0 }, 2500);
          }
 
          if (kills === 3) {
-            $(".damage-display").empty();
-            $(".instructions").text("Champion! Press reset to play again!");
-            $(".outcome-display").text("champion");
-            var reset = $("<button class='reset-button'>").text("Reset");
-            $(".attack-reset").append(reset);
+             $(".damage-display").empty();
+             $(".instructions").text("Champion! Press reset to play again!");
+             $(".outcome-display").text("champion");
+             var reset = $("<button class='reset-button'>").text("Reset");
+             $(".attack-reset").append(reset);
          }
 
      });
 
      $(document).on("click", ".reset-button", function() {
-            location.reload(true);        
+         location.reload(true);
      });
 
 

@@ -232,7 +232,7 @@ h2.instructions {
     display: inline-block;
 }
 
-.player-module:hover {
+.player-stable .player-module:hover {
     cursor: pointer;
 }
 
@@ -266,7 +266,7 @@ h2.instructions {
     border: 5px solid #FFFBFC;
 }
 
-.player-module img.character:hover {
+.player-stable .player-module img.character:hover {
     border: 5px solid #C5111C;
 }
 
