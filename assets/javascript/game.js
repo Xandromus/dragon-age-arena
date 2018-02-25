@@ -125,7 +125,7 @@
 
                      var selectSound = new Audio("assets/sounds/select.mp3");
                      selectSound.play();
-
+                     musicPlayer[0].pause();
                      musicPlayer[0].play();
 
                      // mark fighter as selected
