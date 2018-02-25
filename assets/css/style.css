@@ -11,6 +11,7 @@
 }
 
 
+
 /* BASIC STYLES */
 
 * {
@@ -58,6 +59,11 @@ h3 {
     font-size: 1em;
 }
 
+br {
+    margin-bottom: 3px;
+}
+
+
 
 /* WRAPPER */
 
@@ -69,6 +75,7 @@ h3 {
 }
 
 
+
 /* HEADER */
 
 header {
@@ -77,8 +84,8 @@ header {
 }
 
 #soundicon {
-   -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-touch-callout: none; 
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
 }
 
 #mute {
@@ -89,14 +96,19 @@ header {
     min-width: 24px;
     max-width: 64px;
     float: left;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-touch-callout: none;
 }
+
+
+
+/* MAIN */
 
 main {
     margin-bottom: auto;
     position: relative;
 }
+
 
 
 /* MIDDLE */
@@ -107,6 +119,10 @@ main {
     width: 100%;
     margin: 0 auto;
 }
+
+
+
+/* INSTRUCTIONS */
 
 h2.instructions {
     font-size: 1.8em;
@@ -124,28 +140,9 @@ h2.instructions {
     border-radius: 50px;
 }
 
-.left-ribbon,
-.right-ribbon {
-    position: relative;
-    border-top: 5px solid #220901;
-    border-bottom: 5px solid #220901;
-}
 
-.left-ribbon {
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    margin-right: 20px;
-    border-right: 5px solid #220901;
-}
 
-.right-ribbon {
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    margin-left: 20px;
-    border-left: 5px solid #220901;
-}
-
-/* PLAYER STAGES AND  MODULES */
+/* PLAYER STABLE AND  MODULES */
 
 .stable-container {
     width: 100%;
@@ -160,86 +157,6 @@ h2.instructions {
     margin: 10px auto 0 auto;
     height: 100%;
     min-height: 170px;
-}
-
-.fighter-stage,
-.defender-stage {
-    width: 100%;
-    height: 100%;
-    min-height: 200px;
-    margin: 10px auto;
-}
-
-.stage {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    height: 100%;
-    min-height: 150px;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    margin: 10px auto;
-}
-
-.attack-reset {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    height: 100%;
-    min-height: 100px;
-}
-
-.attack-button,
-.reset-button {
-    cursor: pointer;
-    padding: 5px;
-    background-color: #FFFBFC;
-    font-family: 'ringbearermedium';
-    font-size: 1.1em;
-    border: 2px solid #C5111C;
-    border-radius: 10px;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-touch-callout: none;
-}
-
-.attack-button:hover,
-.reset-button:hover {
-    background-color: #C5111C;
-    border: 2px solid #FFFBFC;
-    color: #FFFBFC;
-}
-
-.damage-display {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 20px auto;
-    width: 50%;
-    height: 100%;
-    min-height: 60px;
-    background-color: #220901;
-    font-size: .9em;
-    border-top: solid 5px #C5111C;
-    border-right: solid 5px #C5111C;
-    border-bottom: solid 5px #C5111C;
-    border-left: solid 5px #C5111C;
-    border-radius: 50px;
 }
 
 .player-module {
@@ -288,6 +205,132 @@ h2.instructions {
 .player-stable .player-module img.character:hover {
     border: 5px solid #C5111C;
 }
+
+
+
+/* DAMAGE DISPLAY */
+
+.damage-display {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    width: 50%;
+    height: 100%;
+    min-height: 60px;
+    background-color: #220901;
+    font-size: .9em;
+    border-top: solid 5px #C5111C;
+    border-right: solid 5px #C5111C;
+    border-bottom: solid 5px #C5111C;
+    border-left: solid 5px #C5111C;
+    border-radius: 50px;
+}
+
+
+
+/* STAGE FOR FIGHTER AND OPPONENT */
+
+.stage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+    min-height: 150px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px auto;
+}
+
+
+
+/* RIBBONS FOR FIGHTER AND OPPONENT */
+
+.left-ribbon,
+.right-ribbon {
+    position: relative;
+    border-top: 5px solid #220901;
+    border-bottom: 5px solid #220901;
+}
+
+.left-ribbon {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-right: 20px;
+    border-right: 5px solid #220901;
+}
+
+.right-ribbon {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-left: 20px;
+    border-left: 5px solid #220901;
+}
+
+
+
+/* FIGHTER AND OPPONENT STAGES */
+
+.fighter-stage,
+.defender-stage {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    margin: 10px auto;
+}
+
+
+
+/* ATTACK AND RESET BUTTONS */
+
+.attack-reset {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+    min-height: 100px;
+}
+
+.attack-button,
+.reset-button {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #FFFBFC;
+    font-family: 'ringbearermedium';
+    font-size: 1.1em;
+    letter-spacing: 1pt;
+    border: 2px solid #C5111C;
+    border-radius: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+}
+
+.attack-button:hover,
+.reset-button:hover {
+    background-color: #C5111C;
+    border: 2px solid #FFFBFC;
+    color: #FFFBFC;
+}
+
+
+
+/* OUTCOME DISPLAY */
 
 .outcome {
     background-color: #C5111C;
@@ -347,6 +390,7 @@ footer p {
 }
 
 
+
 /* ANIMATIONS */
 
 @keyframes fadeIn {
@@ -360,12 +404,8 @@ footer p {
 }
 
 
+
 /* MEDIA QUERIES */
-
-
-/* Reduced screen for flexbox */
-
-@media screen and (max-width: 1850px) {}
 
 
 /* Reduced screen */
@@ -374,6 +414,10 @@ footer p {
     h2.instructions {
         font-size: 1em;
     }
+    .stable-container {
+        width: 700px;
+        margin: 0 auto;
+    }
     h3,
     .player-health {
         font-size: .8em;
@@ -381,17 +425,15 @@ footer p {
     .player-module {
         margin: 10px auto;
     }
-    .stable-container {
-        width: 700px;
-        margin: 0 auto;
-    }
-    .outcome, .damage-display {
+    .damage-display,
+    .outcome {
         width: 100%;
         border-radius: 0;
         border-right: none;
         border-left: none;
     }
 }
+
 
 
 /* iPad Portrait */
@@ -401,9 +443,10 @@ footer p {
         font-size: .8em;
         letter-spacing: 3pt;
     }
-    h3,
-    .player-health {
-        font-size: .7em;
+    #mute {
+        display: none;
+        animation: fadeIn 1s ease-in-out 0.25s;
+        animation-fill-mode: backwards;
     }
     h2.instructions {
         font-size: .9em;
@@ -413,27 +456,21 @@ footer p {
         border-left: none;
         border-right: none;
     }
-    .player-module {
-        width: 40vw;
-    }
-    .damage-display {
-        font-size: .6em;
-        letter-spacing: 2pt;
+    h3,
+    .player-health {
+        font-size: .7em;
     }
     .stable-container {
         max-width: 100%;
         width: 600px;
         margin: 0 auto;
     }
-    footer p {
-        width: 100%;
-        bottom: 0;
-        font-size: .7em;
+    .player-module {
+        width: 40vw;
+    }
+    .damage-display {
+        font-size: .6em;
         letter-spacing: 2pt;
-        border-left: none;
-        border-bottom: none;
-        border-right: none;
-        border-radius: 0;
     }
     .left-ribbon {
         border-top-right-radius: 0;
@@ -447,7 +484,18 @@ footer p {
         border-left: none;
         margin-left: 0;
     }
+    footer p {
+        width: 100%;
+        bottom: 0;
+        font-size: .7em;
+        letter-spacing: 2pt;
+        border-left: none;
+        border-bottom: none;
+        border-right: none;
+        border-radius: 0;
+    }
 }
+
 
 
 /* Small Tablets */
@@ -455,6 +503,9 @@ footer p {
 @media screen and (max-width: 510px) {
     header {
         background-color: #220901;
+    }
+    #mute {
+        max-width: 32px;
     }
     h2 {
         font-size: .7em;
@@ -474,17 +525,15 @@ footer p {
     .player-module img.character {
         border: 3px solid #FFFBFC;
     }
-    .player-module img.character:hover {
+    .player-stable .player-module img.character:hover {
         border: 3px solid #C5111C;
     }
     .fighter-stage,
     .defender-stage {
         min-height: 150px;
     }
-    #mute {
-        max-width: 32px;
-    }
 }
+
 
 
 /* Mobile Phones */
@@ -492,6 +541,11 @@ footer p {
 @media screen and (max-width: 385px) {
     h2 {
         font-size: .6em;
+    }
+    #mute {
+        padding-top: 15px;
+        min-width: 12px;
+        max-width: 24px;
     }
     h2.instructions {
         font-size: .6em;
@@ -505,7 +559,7 @@ footer p {
         left: 12px;
         font-size: .6em;
         letter-spacing: 2pt;
-}
+    }
     .player-health {
         top: 12px;
         left: 12px;
@@ -514,33 +568,35 @@ footer p {
         padding: 5px 5px 5px 6px;
         border-radius: 0;
     }
+    .player-module img.character {
+        border-radius: 0;
+    }
     .damage-display {
         font-size: .55em;
         letter-spacing: 1pt;
     }
-    .player-module img.character {
-        border-radius: 0;
-    }
     .fighter-stage,
     .defender-stage {
-    min-height: 110px;
+        min-height: 110px;
+    }
 }
-#mute {
-    padding-top: 15px;
-    min-width: 12px;
-    max-width: 24px;
-}
-}
+
 
 
 /* Smallest screens */
 
 @media screen and (max-width: 350px) {
-    h2.instructions {
+    #mute {
+        margin-left: 5px;
+        padding-top: 17px;
+        min-width: 12px;
+        max-width: 18px;
+    }
+    h2 {
         font-size: .5em;
         letter-spacing: 2pt;
     }
-    h2 {
+    h2.instructions {
         font-size: .5em;
         letter-spacing: 2pt;
     }
@@ -554,20 +610,4 @@ footer p {
         letter-spacing: 1pt;
         font-size: .5em;
     }
-    #mute {
-    margin-left: 5px;
-    padding-top: 17px;
-    min-width: 12px;
-    max-width: 18px;
 }
-}
-
-
-/* Notebook height */
-
-@media screen and (max-height: 950px) {}
-
-
-/* Shorter screens */
-
-@media screen and (max-height: 770px) {}

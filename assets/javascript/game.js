@@ -108,6 +108,7 @@
                      // move the screen down so that users can access and view the necessary information
                      $("body,html").animate({ scrollTop: 200 }, 1000);
 
+                     // sound to signal that defender has been selected
                      var bellRing = new Audio("assets/sounds/bellring.mp3");
                      bellRing.play();
 
@@ -122,11 +123,15 @@
                      // prompt the user to select their opponent
                      $(".instructions").text("Choose your opponent:");
 
+                     // sound to signal that fighter has been selected
                      var selectSound = new Audio("assets/sounds/select.mp3");
                      selectSound.play();
 
-                     
+                     // start playing theme music once fighter has been selected. Relevant for mobile where autoplay is disabled and user input is required to start music
                      musicPlayer[0].play();
+
+                     // show mute icon once music has started
+                     $("#mute").css("display", "inline");
 
                      // mark fighter as selected
                      fighterSelected = true;
@@ -164,6 +169,7 @@
                  $(".outcome-display").text("victory");
                  $(".instructions").text("Choose your next opponent:");
 
+                 // sound to signal that user has defeated opponent
                  var victorySound = new Audio("assets/sounds/victory.mp3");
                  victorySound.play();
 
@@ -171,6 +177,7 @@
                  kills++;
                  $("body,html").animate({ scrollTop: 0 }, 2500);
              } else {
+
                  // decrease fighter's health by counter attack power, update health display for both opponents, and add damage display for both players
                  characters[yourFighter.attr("data-key")].health -= defenderAttack;
                  $("#" + fighterName).text(characters[yourFighter.attr("data-key")].health);
@@ -198,8 +205,10 @@
                  $(".attack-reset").append(reset);
                  $("body,html").animate({ scrollTop: 0 }, 2500);
 
+                 // stop the theme music
                  $("#music-holder").empty();
 
+                 // sound to signal that user has lost game
                  var defeatSound = new Audio("assets/sounds/defeat.mp3");
                  defeatSound.play();
              }
@@ -212,10 +221,10 @@
                  $(".instructions").text("Champion! Press reset to play again!");
                  $(".outcome-display").text("champion");
 
+                 // music changes to winning theme once user has defeated all three opponents
                  $("#musicSource").attr("src", "http://66.90.93.122/ost/dragon-age-origins/qoyuiknj/34%20%20The%20Coronation.mp3");
                  musicPlayer[0].load();
                  musicPlayer[0].play();
-
 
                  // create reset button
                  $(".attack-reset").append(reset);
@@ -230,5 +239,4 @@
          // call function to initialize the game
          initGame();
      });
-
  })();
