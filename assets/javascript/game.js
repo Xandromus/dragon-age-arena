@@ -56,6 +56,7 @@
              counter = 1;
              kills = 0;
              reset = $("<button class='reset-button'>").text("Reset");
+             musicPlayer = $("#musicPlayer");
 
              // create player modules in the stable
              Object.keys(characters).forEach(key => {
@@ -125,7 +126,6 @@
                      var selectSound = new Audio("assets/sounds/select.mp3");
                      selectSound.play();
 
-                     musicPlayer = $("#musicPlayer");
                      musicPlayer[0].play();
 
                      // mark fighter as selected
