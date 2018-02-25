@@ -76,6 +76,11 @@ header {
     background-color: transparent;
 }
 
+#soundicon {
+   -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none; 
+}
+
 #mute {
     margin-left: 10px;
     padding-top: 10px;

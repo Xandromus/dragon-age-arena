@@ -10,7 +10,7 @@
          var counter;
          var kills;
          var reset;
-         musicPlayer = $("#musicPlayer");
+         var musicPlayer = $("#musicPlayer");
 
          // object containing characters and their key value pairs
          var characters = {
