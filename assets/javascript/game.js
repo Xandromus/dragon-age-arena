@@ -194,6 +194,8 @@
                  $(".attack-reset").append(reset);
                  $("body,html").animate({ scrollTop: 0 }, 2500);
 
+                 $("#music-holder").empty();
+
                  var defeatSound = new Audio("assets/sounds/defeat.mp3");
                  defeatSound.play();
              }
