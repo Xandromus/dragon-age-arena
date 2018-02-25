@@ -6,7 +6,7 @@ var num = 0;
 // changes sound icon to desired mute state when clicked
 function changeImage(el) {
     el.click = ++num;
-    el.src = ((el.click) % 2 === 0) ? "assets/images/sound_off.png" : "assets/images/sound_icon.png";
+    el.src = ((el.click) % 2 === 0) ? "assets/images/sound_icon.png" : "assets/images/sound_off.png";
 }
 
 var audio = document.querySelector('#musicPlayer');
