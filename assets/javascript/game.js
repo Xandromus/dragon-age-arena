@@ -10,6 +10,7 @@
          var counter;
          var kills;
          var reset;
+         var musicPlayer;
 
          // object containing characters and their key value pairs
          var characters = {
@@ -45,6 +46,10 @@
 
          // function to initialize game
          function initGame() {
+
+
+             musicPlayer = $("#musicPlayer");
+             musicPlayer[0].play();
 
              // scroll page to top of screen
              $("body,html").animate({ scrollTop: 0 });
@@ -208,7 +213,6 @@
                  $(".instructions").text("Champion! Press reset to play again!");
                  $(".outcome-display").text("champion");
 
-                 var musicPlayer = $("#musicPlayer");
                  $("#musicSource").attr("src", "http://66.90.93.122/ost/dragon-age-origins/qoyuiknj/34%20%20The%20Coronation.mp3");
                  musicPlayer[0].load();
                  musicPlayer[0].play();
