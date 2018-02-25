@@ -13,6 +13,7 @@
 <body>
     <div class="wrapper">
         <header>
+            <a id="soundicon" href="#"><img id="mute" src="assets/images/sound_off.png" alt="sound icon" title="sound_icon" onclick="soundModule.changeImage(this)" /></a>
             <h1>Dragon Age arena</h1>
         </header>
         <main>
@@ -48,6 +49,10 @@
                     <p class="outcome-display"></p>
                 </div>
         </div>
+        <div id="music-holder">
+                <audio id='musicPlayer' preload='auto' autoplay>
+                        <source id="musicSource" src="http://66.90.93.122/ost/dragon-age-origins/cdizqchr/01%20%20Dragon%20Age%20Origins.mp3" type='audio/mpeg'> Your browser does not support the audio element.</audio>
+        </div>
         </main>
         <footer>
             <p><span class="arial">&copy;</span><script type="text/javascript">
@@ -56,6 +61,7 @@
         </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/sound.js"></script>
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>

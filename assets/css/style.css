@@ -76,6 +76,16 @@ header {
     background-color: transparent;
 }
 
+#mute {
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    min-width: 24px;
+    max-width: 36px;
+    float: left;
+}
+
 main {
     margin-bottom: auto;
     position: relative;
@@ -503,6 +513,11 @@ footer p {
     .defender-stage {
     min-height: 110px;
 }
+#mute {
+    padding-top: 15px;
+    min-width: 12px;
+    max-width: 24px;
+}
 }
 
 
@@ -527,6 +542,11 @@ footer p {
         letter-spacing: 1pt;
         font-size: .5em;
     }
+    #mute {
+    padding-top: 17px;
+    min-width: 12px;
+    max-width: 18px;
+}
 }
 
 
