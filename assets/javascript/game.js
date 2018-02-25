@@ -222,7 +222,7 @@
                  $(".outcome-display").text("champion");
 
                  // music changes to winning theme once user has defeated all three opponents
-                 $("#musicSource").attr("src", "http://66.90.93.122/ost/dragon-age-origins/qoyuiknj/34%20%20The%20Coronation.mp3");
+                 $("#musicSource").attr("src", "assets/sounds/champion.mp3");
                  musicPlayer[0].load();
                  musicPlayer[0].play();
 
