@@ -47,10 +47,6 @@
          // function to initialize game
          function initGame() {
 
-
-             musicPlayer = $("#musicPlayer");
-             musicPlayer[0].play();
-
              // scroll page to top of screen
              $("body,html").animate({ scrollTop: 0 });
 
@@ -128,6 +124,9 @@
 
                      var selectSound = new Audio("assets/sounds/select.mp3");
                      selectSound.play();
+
+                     musicPlayer = $("#musicPlayer");
+                     musicPlayer[0].play();
 
                      // mark fighter as selected
                      fighterSelected = true;
