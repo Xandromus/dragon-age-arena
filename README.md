@@ -1,10 +1,10 @@
-# Dragon Age RPG
+# Dragon Age ARENA
 
-Week 4 Assignment: Create a RPG using jQuery
+An RPG using jQuery
 
 ## Description
 
-[Dragon Age ARENA](https://xandromus.github.io/week-4-game/)
+[Dragon Age ARENA](https://xandromus.github.io/dragon-age-arena/)
 
 ![Dragon Age ARENA](https://xandromus.github.io/responsive-portfolio/assets/images/dragonage.png)
 
